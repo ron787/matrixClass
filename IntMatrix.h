@@ -74,6 +74,12 @@ namespace mtm
 
         ConstIterator end() const;
 
+        class DimensionMismatch;
+
+        class AccessIllegalElement;
+
+        class IllegalInitialization;
+
 
     private:
         Dimensions m_dims;
@@ -143,6 +149,26 @@ namespace mtm
         ConstIterator(const IntMatrix* matrix, int index);
 
         friend class IntMatrix;
+    };
+
+    class IntMatrix::IllegalInitialization : public std::runtime_error
+    {
+    public:
+        IllegalInitialization() : std::runtime_error("Mtm matrix error: Illegal initialization values") {}
+    };
+
+    class IntMatrix::AccessIllegalElement : public std::runtime_error
+    {
+    public:
+        AccessIllegalElement() : std::runtime_error("Mtm matrix error: An attempt to access an illegal element") {}
+    };
+
+    class IntMatrix::DimensionMismatch : public std::runtime_error
+    {
+    public:
+        DimensionMismatch(Dimensions dim1, Dimensions dim2) : std::runtime_error("Mtm matrix error: Dimension mismatch: ("
+        + std::to_string(dim1.getRow()) + ", " + std::to_string(dim1.getCol()) + ") (" + std::to_string(dim2.getRow())
+        + ", " + std::to_string(dim2.getCol()) + ")") {}
     };
 
 

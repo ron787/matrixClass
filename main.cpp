@@ -7,21 +7,17 @@ using namespace mtm;
 
 int main()
 {
-    IntMatrix m1({2,3});
 
-    m1(0,0) = 5;
-    m1(0,1) = 1;
-    m1(0,2) = 2;
-
-    m1(1,0) = 4;
-    m1(1,1) = 3;
-    m1(1,2) = 6;
-
-    IntMatrix m2 =  m1 < 2;
-
-    std::cout << m2;
-
-
+    try
+    {
+        Dimensions dim(2, 5);
+        IntMatrix mat_1(dim);
+        std::cout << mat_1(5,6) << std::endl;
+    }
+    catch (const mtm::IntMatrix::DimensionMismatch& e)
+    {
+        std::cout << e.what() << std::endl;
+    }
 
     return 0;
 }

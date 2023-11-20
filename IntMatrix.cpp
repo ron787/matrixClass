@@ -5,8 +5,16 @@
 #include "IntMatrix.h"
 #include <assert.h>
 
-mtm::IntMatrix::IntMatrix(const mtm::Dimensions& dims, int initialValue) : m_dims(dims), m_elements(new int[dims.getRow() * dims.getCol()])
+mtm::IntMatrix::IntMatrix(const mtm::Dimensions& dims, int initialValue) : m_dims(dims)
 {
+
+    if(m_dims.getCol() <= 0 || m_dims.getRow() <= 0)
+    {
+        throw IntMatrix::IllegalInitialization();
+    }
+
+    m_elements = new int[dims.getRow() * dims.getCol()];
+
     for (int i = 0; i < m_dims.getRow() * m_dims.getCol(); i++)
     {
         m_elements[i] = initialValue;
@@ -88,6 +96,11 @@ mtm::IntMatrix mtm::IntMatrix::transpose(const IntMatrix& matrix)
 
 mtm::IntMatrix& mtm::IntMatrix::operator+=(const IntMatrix& matrix)
 {
+    if(m_dims != matrix.m_dims)
+    {
+        throw IntMatrix::DimensionMismatch(m_dims, matrix.m_dims);
+    }
+
     for (int i = 0; i < getSize(); i++)
     {
         m_elements[i] += matrix.m_elements[i];
@@ -141,11 +154,21 @@ std::ostream& mtm::operator<<(std::ostream& os, const mtm::IntMatrix& matrix)
 
 int mtm::IntMatrix::operator()(int row, int col) const
 {
+    if(row < 0 || row >= getHeight() || col < 0 || col >= getWidth())
+    {
+        throw IntMatrix::AccessIllegalElement();
+    }
+
     return m_elements[getWidth() * row + col];
 }
 
 int& mtm::IntMatrix::operator()(int row, int col)
 {
+    if(row < 0 || row >= getHeight() || col < 0 || col >= getWidth())
+    {
+        throw IntMatrix::AccessIllegalElement();
+    }
+
     return m_elements[getWidth() * row + col];
 }
 
