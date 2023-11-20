@@ -9,7 +9,6 @@
 #include <iostream>
 #include <ostream>
 
-
 namespace mtm
 {
     class Dimensions
@@ -47,7 +46,7 @@ namespace mtm
             os << *it << " ";
             row_counter++;
         }
-        os << std::endl;
+        os << std::endl << std::endl;
         return os;
     }
 }

@@ -61,8 +61,8 @@ build CMakeFiles/hw3_2020.dir/Auxilaries.cpp.obj: CXX_COMPILER__hw3_2020_Debug C
   OBJECT_DIR = CMakeFiles\hw3_2020.dir
   OBJECT_FILE_DIR = CMakeFiles\hw3_2020.dir
 
-build CMakeFiles/hw3_2020.dir/IntMatrix.cpp.obj: CXX_COMPILER__hw3_2020_Debug C$:/Users/mailr/ClionProjects/hw3_2020/IntMatrix.cpp || cmake_object_order_depends_target_hw3_2020
-  DEP_FILE = CMakeFiles\hw3_2020.dir\IntMatrix.cpp.obj.d
+build CMakeFiles/hw3_2020.dir/Matrix.cpp.obj: CXX_COMPILER__hw3_2020_Debug C$:/Users/mailr/ClionProjects/hw3_2020/Matrix.cpp || cmake_object_order_depends_target_hw3_2020
+  DEP_FILE = CMakeFiles\hw3_2020.dir\Matrix.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
   OBJECT_DIR = CMakeFiles\hw3_2020.dir
   OBJECT_FILE_DIR = CMakeFiles\hw3_2020.dir
@@ -75,7 +75,7 @@ build CMakeFiles/hw3_2020.dir/IntMatrix.cpp.obj: CXX_COMPILER__hw3_2020_Debug C$
 #############################################
 # Link the executable hw3_2020.exe
 
-build hw3_2020.exe: CXX_EXECUTABLE_LINKER__hw3_2020_Debug CMakeFiles/hw3_2020.dir/main.cpp.obj CMakeFiles/hw3_2020.dir/Auxilaries.cpp.obj CMakeFiles/hw3_2020.dir/IntMatrix.cpp.obj
+build hw3_2020.exe: CXX_EXECUTABLE_LINKER__hw3_2020_Debug CMakeFiles/hw3_2020.dir/main.cpp.obj CMakeFiles/hw3_2020.dir/Auxilaries.cpp.obj CMakeFiles/hw3_2020.dir/Matrix.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\hw3_2020.dir

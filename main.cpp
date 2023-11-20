@@ -1,23 +1,27 @@
 #include <iostream>
 #include <vector>
-#include "IntMatrix.h"
+#include "Matrix.h"
 
 using namespace mtm;
 
+int Square(int num)
+{
+    return num * num;
+}
 
 int main()
 {
 
-    try
-    {
-        Dimensions dim(2, 5);
-        IntMatrix mat_1(dim);
-        std::cout << mat_1(5,6) << std::endl;
-    }
-    catch (const mtm::IntMatrix::DimensionMismatch& e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+//    Matrix<std::string> m1({2, 3}, "Hello");
+
+      Matrix<int> m1 = Matrix<int>::Diagonal(3,5);
+
+      std::cout << m1;
+
+      Matrix<int> m2 = m1.apply(Square);
+
+      std::cout << m2;
+
 
     return 0;
 }

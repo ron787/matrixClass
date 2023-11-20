@@ -3,4 +3,4 @@ project(hw3_2020)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(hw3_2020 main.cpp Auxilaries.cpp Auxilaries.h IntMatrix.cpp IntMatrix.h)
+add_executable(hw3_2020 main.cpp Auxilaries.cpp Auxilaries.h Matrix.cpp Matrix.h Matrix.cpp)
