@@ -1,0 +1,3 @@
+C:/Users/mailr/ClionProjects/hw3_2020/cmake-build-debug/CMakeFiles/hw3_2020.dir
+C:/Users/mailr/ClionProjects/hw3_2020/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/mailr/ClionProjects/hw3_2020/cmake-build-debug/CMakeFiles/rebuild_cache.dir
